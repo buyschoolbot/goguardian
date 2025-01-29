@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Fetch and Execute JS",
+    "version": "1.0",
+    "description": "Fetch and execute JavaScript from a URL",
+    "permissions": [
+      "activeTab",
+      "http://*/", 
+      "https://*/"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
