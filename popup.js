@@ -1,4 +1,6 @@
 document.getElementById('execute').addEventListener('click', function() {
-    chrome.runtime.sendMessage({ action: 'fetchAndExecute' });
+    chrome.runtime.getBackgroundPage(function(backgroundPage) {
+      backgroundPage.fetchAndExecuteScript(); // Calls the background function to fetch and run the script
+    });
   });
   

